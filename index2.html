@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Content Visibility</title>
+    <style>
+        .section{
+            content-visibility: auto;
+            contain-intrinsic-size: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="section main">
+            <div class="image">
+                <img src="https://picsum.photos/id/237/400/300" alt="foto">
+            </div>
+            <div class="txt">
+                <h1>Check content visibility</h1>
+            </div>
+        </div>
+
+
+        <div class="sections"></div>
+
+
+    </div>
+
+    <script>
+        function display(url) {
+            return `<div class="section">
+            <div class="image">
+                <img src="${url}" alt="foto">
+            </div>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, sequi voluptates? Soluta, similique quod sed commodi eaque facere sunt consequuntur exercitationem itaque, odit aperiam est ad enim ratione quam error suscipit accusantium ut consectetur. Quisquam incidunt ut atque, rerum ipsum perferendis quod? Ullam repudiandae non maiores illum repellendus quasi sunt, quisquam nam consectetur quae. Nam dolorem pariatur quaerat corporis, a nobis eveniet. Magnam, modi vitae tenetur possimus aliquam neque minima beatae porro quidem voluptatum eius debitis obcaecati omnis quis distinctio odit praesentium similique dolores voluptatem optio est eum. Impedit dolorum dolorem dolores debitis eius quo nemo necessitatibus id tempora nulla, voluptatem expedita et delectus deleniti laudantium provident sed vitae accusamus laborum explicabo iure labore voluptates distinctio. Autem placeat suscipit aut quia. Obcaecati, autem eum recusandae omnis sunt, necessitatibus ea consequuntur perferendis nobis soluta quae nulla earum unde laboriosam dignissimos ab incidunt corporis esse voluptas? Facere, asperiores sint repellendus numquam quis veniam perspiciatis officia dolorem. Id omnis laboriosam suscipit commodi laudantium? Rem molestias sunt dolorem, eum mollitia cumque necessitatibus consectetur repellendus illum impedit odit quae ex sit repellat maiores iste provident sequi soluta, corporis numquam? Laboriosam atque velit doloribus et sit dolorem ullam dignissimos autem, rem quos reiciendis deserunt eligendi ducimus animi labore possimus ipsa rerum, odio quaerat reprehenderit corrupti quibusdam placeat natus hic. Harum dignissimos provident eaque voluptatum voluptate velit! Pariatur, quas odit officia, quidem ad architecto aliquam, voluptas sequi in velit culpa blanditiis deleniti vero totam cumque adipisci mollitia sint corporis assumenda voluptates veniam laboriosam. Illo porro ea corporis ad enim ratione ut repellat, eveniet iure id ducimus, maxime quam illum nisi aspernatur iusto laudantium similique totam maiores accusantium dicta incidunt debitis! Veritatis incidunt ad nobis dolore tenetur cumque, esse natus cum sint nisi fuga alias ullam magnam quo dignissimos quisquam sunt, autem temporibus? Aliquid iste culpa in ab.</p>
+            </div>
+        </div>`
+        }
+
+
+        let url, rand
+        for (let i = 0; i < 50; i++) {
+            rand = Math.floor(Math.random() * 500) + 1
+            url = `https://picsum.photos/id/${rand}/400/300`
+            document.querySelector(".sections").innerHTML += display(url)
+        }
+    </script>
+
+</body>
+
+</html>
